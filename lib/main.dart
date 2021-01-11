@@ -4,9 +4,9 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Pin'),
-        ),
+        body: SafeArea(child: Container(
+          child: Text('hellp'),
+        )),
       ),
     )
   );
