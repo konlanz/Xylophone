@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 
 void main() {
-  runApp(MaterialApp(home: XyloPhone()));
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: XyloPhone()));
 }
 
 class XyloPhone extends StatelessWidget {
@@ -12,80 +14,34 @@ class XyloPhone extends StatelessWidget {
     player.play('note$note.wav');
   }
 
+  Expanded builKey(Color color, int noteNumber) {
+    return Expanded(
+      child: FlatButton(
+        color: color,
+        onPressed: () {
+          playSound(noteNumber);
+        },
+        child: Text(''),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Scaffold(
-        backgroundColor: Colors.black,
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: FlatButton(
-                  color: Colors.red,
-                  onPressed: () {
-                    playSound(1);
-                  },
-                  child: Text(''),
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.yellow,
-                  onPressed: () {
-                    playSound(2);
-                  },
-                  child: Text(''),
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.orange,
-                  onPressed: () {
-                    playSound(3);
-                  },
-                  child: Text(''),
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.green,
-                  onPressed: () {
-                    playSound(4);
-                  },
-                  child: Text(''),
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.greenAccent,
-                  onPressed: () {
-                    playSound(5);
-                  },
-                  child: Text(''),
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue,
-                  onPressed: () {
-                    playSound(6);
-                  },
-                  child: Text(''),
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.pinkAccent,
-                  onPressed: () {
-                    playSound(7);
-                  },
-                  child: Text(''),
-                ),
-              ),
-            ],
-          ),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            builKey(Colors.red, 1),
+            builKey(Colors.yellow, 2),
+            builKey(Colors.orange, 3),
+            builKey(Colors.green, 4),
+            builKey(Colors.greenAccent, 5),
+            builKey(Colors.blue, 6),
+            builKey(Colors.pinkAccent, 7),
+                        ],
         ),
       ),
     );
