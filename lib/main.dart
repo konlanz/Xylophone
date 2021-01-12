@@ -7,69 +7,82 @@ void main() {
 
 class XyloPhone extends StatelessWidget {
   const XyloPhone({Key key}) : super(key: key);
+  void playSound(int note) {
+    final player = AudioCache();
+    player.play('note$note.wav');
+  }
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              FlatButton(
-                color: Colors.red,
-                onPressed: () {
-                  final player = AudioCache();
-                  player.play('note1.wav');
-                },
-                child: Text(''),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.red,
+                  onPressed: () {
+                    playSound(1);
+                  },
+                  child: Text(''),
+                ),
               ),
-              FlatButton(
-                color: Colors.yellow,
-                onPressed: () {
-                  final player = AudioCache();
-                  player.play('note2.wav');
-                },
-                child: Text(''),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.yellow,
+                  onPressed: () {
+                    playSound(2);
+                  },
+                  child: Text(''),
+                ),
               ),
-              FlatButton(
-                color: Colors.orange,
-                onPressed: () {
-                  final player = AudioCache();
-                  player.play('note3.wav');
-                },
-                child: Text(''),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.orange,
+                  onPressed: () {
+                    playSound(3);
+                  },
+                  child: Text(''),
+                ),
               ),
-              FlatButton(
-                color: Colors.green,
-                onPressed: () {
-                  final player = AudioCache();
-                  player.play('note4.wav');
-                },
-                child: Text(''),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.green,
+                  onPressed: () {
+                    playSound(4);
+                  },
+                  child: Text(''),
+                ),
               ),
-              FlatButton(
-                color: Colors.greenAccent,
-                onPressed: () {
-                  final player = AudioCache();
-                  player.play('note5.wav');
-                },
-                child: Text(''),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.greenAccent,
+                  onPressed: () {
+                    playSound(5);
+                  },
+                  child: Text(''),
+                ),
               ),
-              FlatButton(
-                color: Colors.blue,
-                onPressed: () {
-                  final player = AudioCache();
-                  player.play('note6.wav');
-                },
-                child: Text(' '),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.blue,
+                  onPressed: () {
+                    playSound(6);
+                  },
+                  child: Text(''),
+                ),
               ),
-              FlatButton(
-                color: Colors.pinkAccent,
-                onPressed: () {
-                  final player = AudioCache();
-                  player.play('note7.wav');
-                },
-                child: Text(' '),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.pinkAccent,
+                  onPressed: () {
+                    playSound(7);
+                  },
+                  child: Text(''),
+                ),
               ),
             ],
           ),
